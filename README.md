@@ -391,7 +391,7 @@ This project helps you understand:
 
 **Anshul Kumar**
 Backend Developer (MERN Stack)
-MCA Student | Pilkhua, India
+MCA Student | Meerut, India
 
 > Passionate about scalable system design, production-ready backend services, and continuous learning.
 
