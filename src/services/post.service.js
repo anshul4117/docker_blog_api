@@ -53,7 +53,7 @@ exports.updatePost = async (id, data) => {
     const post = await Post.findOneAndUpdate(
         { _id: id, isDeleted: false },
         data,
-        { new: true, runValidators: true }
+        { returnDocument: 'after', runValidators: true }
     );
     if (!post) {
         throw new ApiError(404, 'Post not found');
@@ -66,7 +66,7 @@ exports.partialUpdatePost = async (id, data) => {
     const post = await Post.findOneAndUpdate(
         { _id: id, isDeleted: false },
         { $set: data },
-        { new: true, runValidators: true }
+        { returnDocument: 'after', runValidators: true }
     );
     if (!post) {
         throw new ApiError(404, 'Post not found');
@@ -79,7 +79,7 @@ exports.deletePost = async (id) => {
     const post = await Post.findOneAndUpdate(
         { _id: id, isDeleted: false },
         { isDeleted: true, deletedAt: new Date() },
-        { new: true }
+        { returnDocument: 'after' }
     );
     if (!post) {
         throw new ApiError(404, 'Post not found');
